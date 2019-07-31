@@ -5,6 +5,7 @@
 	$productPrice = $_POST["productPrice"];
 	$productDescription = $_POST["productDescription"];
 	$productItemCnt = $_POST["productItemCnt"];
+
 	
 	$statement = mysqli_prepare($con, "INSERT INTO PRODUCTINFO VALUES (?,?,?,?);");
 	mysqli_stmt_bind_param($statement, "sssi", $productName, $productPrice, $productItemCnt, $productDescription);
@@ -14,4 +15,4 @@
 	$response["success"] = true;
 	
 	echo json_encode($response);
-?>
+?> 
