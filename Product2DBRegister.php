@@ -5,10 +5,11 @@
 	$productPrice = $_POST["productPrice"];
 	$productDescription = $_POST["productDescription"];
 	$productItemCnt = $_POST["productItemCnt"];
-
+	$sellerID = $_POST["sellerID"];
+	$productImage1 = $_POST["productImage1"];
 	
-	$statement = mysqli_prepare($con, "INSERT INTO PRODUCTINFO VALUES (?,?,?,?);");
-	mysqli_stmt_bind_param($statement, "sssi", $productName, $productPrice, $productItemCnt, $productDescription);
+	$statement = mysqli_prepare($con, "INSERT INTO PRODUCTINFO2 VALUES (?,?,?,?,?,?);");
+	mysqli_stmt_bind_param($statement, "sssp", $productName, $productPrice, $productItemCnt, $productDescription, $sellerID, $productImage1);
 	mysqli_stmt_execute($statement);
 	
 	$response = array();
